@@ -1,88 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jorge Elías Carrasco Peña — Sitio Personal</title>
-  <meta name="description" content="Página personal de Jorge Elías Carrasco Peña. Contacto rápido por teléfono y WhatsApp.">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jorge el Manzana</title>
+  <meta name="description" content="Sitio personal de Jorge Elías Carrasco Peña (Jorge el Manzana)">
+  <style>
+    :root { --maxw: 900px;}
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height: 1.5; color: #111; }
+    header { padding: 2.5rem 1rem; text-align: center; background: linear-gradient(180deg,#f5f5f5,#fff); border-bottom: 1px solid #eee; }
+    header h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+    header p { margin: .5rem 0 0; color: #444; }
+    main { max-width: var(--maxw); margin: 0 auto; padding: 1.25rem; }
+    .card { border: 1px solid #eaeaea; border-radius: 16px; padding: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .cta { display: inline-block; padding: .9rem 1.2rem; border-radius: 999px; text-decoration: none; border: 1px solid #111; }
+    .cta + .cta { margin-left: .5rem; }
+    footer { text-align: center; color: #666; padding: 2rem 1rem; }
+    .muted { color:#666; font-size:.95rem;}
+  </style>
 </head>
 <body>
-  <header class="container">
-    <div class="brand">
-      <div class="logo">🍏</div>
-      <div>
-        <h1>Jorge Elías Carrasco Peña</h1>
-        <p class="tag">Conserje • Guardia • Proyectos personales</p>
-      </div>
-    </div>
-    <nav class="nav">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto" class="btn">Contacto</a>
-    </nav>
+  <header>
+    <h1>Jorge el Manzana</h1>
+    <p>Conserje y guardia — ideas, proyectos y Kino 🍀</p>
+    <p class="muted">Teléfono: <a href="tel:+56981471842">+56 9 8147 1842</a></p>
+    <p>
+      <a class="cta" href="https://wa.me/56981471842" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="cta" href="mailto:jorge@example.com">Correo</a>
+    </p>
   </header>
 
-  <main id="inicio" class="hero container">
-    <div class="hero-text">
-      <h2>¡Hola! Soy Jorge.</h2>
-      <p>
-        Bienvenido a mi página web. Aquí encontrarás mis datos de contacto, una breve
-        descripción de lo que hago y proyectos que estoy armando. Si necesitas algo,
-        <strong>escríbeme o llámame directo</strong>.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="tel:+56981471842">📞 Llamar</a>
-        <a class="btn outline" href="https://wa.me/56981471842?text=Hola%20Jorge%2C%20te%20contacto%20desde%20tu%20web" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <a class="btn subtle" href="#contacto">Más opciones</a>
-      </div>
-      <p class="note">Dominio en preparación: <em>www.gorrodealuminio.cl</em> (placeholder)</p>
-    </div>
-    <div class="hero-media">
-      <img src="assets/perfil.png" alt="Foto/Avatar de Jorge" />
-    </div>
+  <main class="grid">
+    <section class="card">
+      <h2>Sobre mí</h2>
+      <p>Hola, soy Jorge Elías Carrasco Peña (Jorge el Manzana). Aquí compartiré mis proyectos e ideas. Este sitio está en construcción — versión inicial.</p>
+    </section>
+    <section class="card">
+      <h2>Proyecto Kino</h2>
+      <p>Seguimiento del análisis, figuras y predicciones. Pronto agregaré gráficos y archivos.</p>
+    </section>
+    <section class="card">
+      <h2>Contacto</h2>
+      <p>Si necesitas comunicarte, llámame o escríbeme por WhatsApp. ¡Gracias!</p>
+    </section>
   </main>
 
-  <section id="servicios" class="container cards">
-    <article class="card">
-      <h3>Conserjería y Guardia</h3>
-      <p>Responsabilidad, trato cordial y apoyo en tareas de seguridad y administración.</p>
-    </article>
-    <article class="card">
-      <h3>Proyectos Web</h3>
-      <p>Experimentando con páginas sencillas para mostrar información y contacto rápido.</p>
-    </article>
-    <article class="card">
-      <h3>Kino • Estrategias</h3>
-      <p>Exploración de patrones y registros históricos para mejorar predicciones.</p>
-    </article>
-  </section>
-
-  <section id="contacto" class="container contact">
-    <h2>Contacto</h2>
-    <ul class="contact-list">
-      <li>📱 <strong>Teléfono / WhatsApp:</strong> <a href="tel:+56981471842">+56981471842</a></li>
-      <li>📧 <strong>Email:</strong> <a href="mailto:jorge@example.com">jorge@example.com</a> (placeholder)</li>
-      <li>🌐 <strong>Dominio:</strong> <span>www.gorrodealuminio.cl</span> (en preparación)</li>
-    </ul>
-    <form class="contact-form" onsubmit="return handleSubmit(event)">
-      <label>
-        Tu nombre
-        <input type="text" name="nombre" placeholder="Escribe tu nombre" required />
-      </label>
-      <label>
-        Tu mensaje
-        <textarea name="mensaje" rows="4" placeholder="Cuéntame en qué te ayudo" required></textarea>
-      </label>
-      <button class="btn primary" type="submit">Enviar</button>
-      <p id="form-status" class="status" role="status" aria-live="polite"></p>
-    </form>
-  </section>
-
-  <footer class="container footer">
-    <p>© 2025-08-14 Jorge Elías Carrasco Peña — Sitio personal simple. Hecho con ❤️</p>
+  <footer>
+    <small>© <span id="y"></span> Jorge el Manzana — Hecho con cariño.</small>
   </footer>
-
-  <script src="script.js"></script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
