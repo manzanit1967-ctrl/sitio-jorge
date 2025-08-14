@@ -31,7 +31,15 @@
 
     <!-- Foto: primero foto.jpg; si falla, intenta foto.png -->
 <!-- o -->
-<img id="foto-jm" src="images/foto.png" alt="Jorge el Manzana" ...>
+<img <img id="foto-jm" src="images/foto.jpg?v=2" alt="Jorge el Manzana"
+     style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+<script>
+  // Si no existe foto.jpg, intenta automáticamente con foto.png (también con versionado)
+  const im = document.getElementById('foto-jm');
+  im.onerror = () => { im.onerror = null; im.src = 'images/foto.png?v=2'; };
+</script>
+
+  id="foto-jm" src="images/foto.png" alt="Jorge el Manzana" ...>
 
     <script>
       const im = document.getElementById('foto-jm');
