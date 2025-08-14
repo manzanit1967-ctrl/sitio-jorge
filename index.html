@@ -30,8 +30,12 @@
     <h1>Jorge el Manzana</h1>
 
     <!-- Foto: primero foto.jpg; si falla, intenta foto.png -->
-    <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana"
-         style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+    <img <img id="foto-jm" src="images/jorge.jpg" alt="Jorge el Manzana" ...>
+<!-- o -->
+<img id="foto-jm" src="images/IMG_1234.JPG" alt="Jorge el Manzana" ...>
+<!-- o -->
+<img id="foto-jm" src="images/foto.png" alt="Jorge el Manzana" ...>
+
     <script>
       const im = document.getElementById('foto-jm');
       im.onerror = () => { im.onerror = null; im.src = 'images/foto.png'; };
