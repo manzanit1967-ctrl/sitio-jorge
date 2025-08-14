@@ -1,23 +1,11 @@
 <!doctype html>
 <html lang="es">
-<head><p>
-  <a class="btn-call" href="tel:+56981471842">📞 Llamar ahora</a>
-</p>
-
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jorge el Manzana</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="Sitio personal de Jorge Elías Carrasco Peña (Jorge el Manzana)">
-  <style>.btn-call {
-  display:inline-block; margin-top:1rem; padding:1rem 1.25rem;
-  border-radius:999px; text-decoration:none; font-weight:700;
-  border:0; box-shadow:0 8px 24px rgba(0,0,0,.12);
-  background:#16a34a; color:#fff; font-size:1.1rem;
-}
-.btn-call:active { transform: translateY(1px); }
-
+  <style>
     :root { --maxw: 900px;}
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height: 1.5; color: #111; }
@@ -27,59 +15,50 @@
     main { max-width: var(--maxw); margin: 0 auto; padding: 1.25rem; }
     .card { border: 1px solid #eaeaea; border-radius: 16px; padding: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
     .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .cta { display: inline-block; padding: .9rem 1.2rem; border-radius: 999px; text-decoration: none; border: 1px solid #111; }
-    .cta + .cta { margin-left: .5rem; }
-    footer { text-align: center; color: #666; padding: 2rem 1rem; }
-    .muted { color:#666; font-size:.95rem;}
+    .btn-call {
+      display:inline-block; margin-top:1rem; padding:1rem 1.25rem;
+      border-radius:999px; text-decoration:none; font-weight:700;
+      border:0; box-shadow:0 8px 24px rgba(0,0,0,.12);
+      background:#16a34a; color:#fff; font-size:1.1rem;
+    }
+    .btn-call:active { transform: translateY(1px); }
+    .muted { color:#666; font-size:.95rem; }
   </style>
 </head>
 <body>
   <header>
     <h1>Jorge el Manzana</h1>
-    <img <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
-<script>
-  // Si no existe foto.jpg, intenta automáticamente con foto.png
-  const im = document.getElementById('foto-jm');
-  im.onerror = () => { im.onerror = null; im.src = 'images/foto.png'; };
-</script>
 
-      src="images/jorge.jpg" <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
-<script>
-  // Si no existe foto.jpg, intenta automáticamente con foto.png
-  const im = document.getElementById('foto-jm');
-  im.onerror = () => { im.onerror = null; im.src = 'images/foto.png'; };
-</script>
-alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+    <!-- Foto: primero foto.jpg; si falla, intenta foto.png -->
+    <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana"
+         style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+    <script>
+      const im = document.getElementById('foto-jm');
+      im.onerror = () => { im.onerror = null; im.src = 'images/foto.png'; };
+    </script>
 
     <p>Conserje y guardia — ideas, proyectos y Kino 🍀</p>
     <p class="muted">Teléfono: <a href="tel:+56981471842">+56 9 8147 1842</a></p>
     <p>
-      <a class="cta" href="https://wa.me/56981471842" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="cta" href="mailto:jorge@example.com">Correo</a>
+      <a class="btn-call" href="tel:+56981471842">📞 Llamar ahora</a>
+      <a class="btn-call" href="https://wa.me/56981471842" target="_blank" rel="noopener" style="background:#22c55e;">💬 WhatsApp</a>
     </p>
   </header>
 
   <main class="grid">
     <section class="card">
       <h2>Sobre mí</h2>
-      <p>Hola, soy Jorge Elías Carrasco Peña (Jorge el Manzana). Aquí compartiré mis proyectos e ideas. Este sitio está en construcción — versión inicial.</p>
+      <p>Hola, soy Jorge Elías Carrasco Peña (Jorge el Manzana). Este sitio está en construcción — versión inicial.</p>
     </section>
     <section class="card">
       <h2>Proyecto Kino</h2>
       <p>Seguimiento del análisis, figuras y predicciones. Pronto agregaré gráficos y archivos.</p>
     </section>
-    <section class="card">
-      <h2>Contacto</h2>
-      <p>Si necesitas comunicarte, llámame o escríbeme por WhatsApp. ¡Gracias!</p>
-    </section>
   </main>
 
-  <footer>
+  <footer style="text-align:center;color:#666;padding:2rem 1rem;">
     <small>© <span id="y"></span> Jorge el Manzana — Hecho con cariño.</small>
   </footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
-<!-- build -->
-<!-- publish -->
-<!-- publish -->
