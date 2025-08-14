@@ -36,7 +36,14 @@
 <body>
   <header>
     <h1>Jorge el Manzana</h1>
-    <img src="images/jorge.jpg" <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+    <img <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+<script>
+  // Si no existe foto.jpg, intenta automáticamente con foto.png
+  const im = document.getElementById('foto-jm');
+  im.onerror = () => { im.onerror = null; im.src = 'images/foto.png'; };
+</script>
+
+      src="images/jorge.jpg" <img id="foto-jm" src="images/foto.jpg" alt="Jorge el Manzana" style="display:block;margin:16px auto;border-radius:50%;width:180px;height:180px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
 <script>
   // Si no existe foto.jpg, intenta automáticamente con foto.png
   const im = document.getElementById('foto-jm');
