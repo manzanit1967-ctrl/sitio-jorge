@@ -5,140 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OXIGENO</title>
   <link rel="canonical" href="https://manzanit1967-ctrl.github.io/sitio-jorge/">
-  <meta name="description" content="Proyectos, contacto y novedades.">
+  <meta name="description" content="Purificador de agua — contacto y novedades.">
 
-  <!-- Open Graph / WhatsApp / Twitter -->
+  <!-- Open Graph / Twitter (usa la MISMA imagen del hero) -->
   <meta property="og:title" content="OXIGENO">
-  <meta property="og:description" content="Proyectos, contacto y novedades.">
+  <meta property="og:description" content="Purificador de agua — contacto y novedades.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://manzanit1967-ctrl.github.io/sitio-jorge/">
-  <!-- Imagen en la RAÍZ del repo -->
-  <meta property="og:image" content="https://manzanit1967-ctrl.github.io/sitio-jorge/foto-antidoto.png?v=30">
+  <meta property="og:image" content="https://manzanit1967-ctrl.github.io/sitio-jorge/foto-antidoto.png?v=41">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OXIGENO">
-  <meta name="twitter:description" content="Proyectos, contacto y novedades.">
-  <meta name="twitter:image" content="https://manzanit1967-ctrl.github.io/sitio-jorge/foto-antidoto.png?v=30">
+  <meta name="twitter:description" content="Purificador de agua — contacto y novedades.">
+  <meta name="twitter:image" content="https://manzanit1967-ctrl.github.io/sitio-jorge/foto-antidoto.png?v=41">
 
-  <!-- ==== ESTILOS ==== -->
-  /* ==== HERO SIN RECORTES (frasco completo) ==== */
-#hero{
-  min-height: 100vh;               /* ocupa toda la pantalla */
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
-    url('foto-antidoto.png?v=35') center/contain no-repeat;  /* archivo en la RAÍZ */
-  background-color: #0b0f14;       /* color detrás si sobran márgenes */
-  border-bottom: 0;
-}
+  <style>
+    /* ==== HERO ÚNICO: frasco completo, sin recortes ==== */
+    #hero{
+      min-height:100vh;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
+        url('foto-antidoto.png?v=41') center/contain no-repeat; /* imagen en la RAÍZ */
+      background-color:#0b0f14;  /* rellena bandas si sobran */
+      border-bottom:0;
+    }
+    /* Si quedaba algún menú/letras arriba, las ocultamos por seguridad */
+    .topnav{ display:none!important; }
 
-<style>
-/* ==== HERO ÚNICO (frasco completo; no se recorta) ==== */
-#hero{
-  min-height: 100vh;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
-    url('foto-antidoto.png?v=40') center/contain no-repeat; /* imagen en la RAÍZ */
-  background-color:#0b0f14;
-  border-bottom:0;
-}
+    /* Base y secciones */
+    :root{ --maxw:1100px; }
+    *{ box-sizing:border-box }
+    html{ scroll-behavior:smooth }
+    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height:1.5; color:#111 }
+    h1{ text-align:center; margin:1rem 0 .25rem; letter-spacing:.5px; }
+    section{ scroll-margin-top:80px }
+    .container{ max-width:var(--maxw); margin:0 auto; padding:1.25rem }
 
-/* Si aún te aparece un menú viejo/“letras arriba”, lo ocultas: */
-.topnav{ display:none !important; }
+    /* Productos (cards) */
+    .products{ display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
+    .product-card{ border:1px solid #eaeaea; border-radius:16px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06) }
+    .product-card h3{ margin:.25rem 0 .5rem }
+    .badge{ display:inline-block; font-size:.8rem; background:#ecfdf5; color:#065f46; padding:.2rem .5rem; border-radius:999px; margin-bottom:.5rem }
+    .btn{ display:inline-block; padding:.8rem 1rem; border-radius:12px; font-weight:800; text-decoration:none; background:#16a34a; color:#fff; box-shadow:0 10px 24px rgba(0,0,0,.12) }
+    .btn:hover{ filter:brightness(1.05) }
 
-/* Utilidades y secciones (básico) */
-html{ scroll-behavior:smooth }
-section{ scroll-margin-top:80px }
-.container{ max-width:1100px; margin:0 auto; padding:1.25rem }
-.products{ display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) }
-.product-card{ border:1px solid #eaeaea; border-radius:16px; padding:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06) }
-.badge{ display:inline-block; font-size:.8rem; background:#ecfdf5; color:#065f46; padding:.2rem .5rem; border-radius:999px; margin-bottom:.5rem }
-.btn{ display:inline-block; padding:.8rem 1rem; border-radius:12px; font-weight:800; text-decoration:none; background:#16a34a; color:#fff; box-shadow:0 10px 24px rgba(0,0,0,.12) }
-.btn:hover{ filter:brightness(1.05) }
-footer{ text-align:center; color:#666; padding:2rem 1rem }
-</style>
-
-
-  /* ===== NAVBAR FIJA ===== */
-.topnav{
-  position:fixed; inset:0 0 auto 0; height:64px; z-index:1000;
-  backdrop-filter: saturate(130%) blur(8px);
-  background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
-.nav-inner{
-  max-width: 1100px; margin:0 auto; height:100%;
-  display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 16px;
-}
-.brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:#065f46; }
-.topnav .links a{
-  margin-left:16px; text-decoration:none; color:#111; font-weight:600;
-}
-.topnav .links a:hover{ text-decoration:underline }
-
-<header id="hero"></header>
-<h1 style="text-align:center;margin:1rem 0 .25rem;letter-spacing:.5px;">OXIGENO</h1>
-
+    footer{ text-align:center; color:#666; padding:2rem 1rem }
+  </style>
+</head>
 <body>
-<h1 style="text-align:center;margin:1rem 0 .25rem;letter-spacing:.5px;">OXIGENO</h1>
-    <div class="nav-inner">
-    <a class="brand" href="#top">OXIGENO</a>
-    <div class="links">
-      <a href="#productos">Productos</a>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#confianza">Confianza</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </div>
-</nav>
+  <!-- HERO (solo fondo; sin textos ni img dentro) -->
+  <header id="hero"></header>
 
-  
+  <!-- Título fuera del hero para que no tape el frasco -->
+  <h1>OXIGENO</h1>
+
+  <!-- Contenido -->
   <main id="top">
-  <section id="productos" class="container">
-    <h2 style="margin:0 0 .5rem">Productos</h2>
-    <p style="margin-top:0;color:#444">Purificación de agua — calidad y respaldo.</p>
+    <!-- Sección Productos (edítala a tu gusto) -->
+    <section id="productos" class="container">
+      <h2 style="margin:0 0 .5rem">Productos</h2>
+      <p style="margin-top:0;color:#444">Purificación de agua — calidad y respaldo.</p>
 
-    <div class="products">
-      <article class="product-card">
-        <span class="badge">Más vendido</span>
-        <h3>Purificador OXIGENO — Frasco 500 ml</h3>
-        <p>Formulación premium para uso doméstico.</p>
-        <p style="font-weight:700;margin:.5rem 0">CLP $XX.XXX</p>
-        <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20quiero%20comprar%20el%20500ml" target="_blank" rel="noopener">Comprar por WhatsApp</a>
-      </article>
+      <div class="products">
+        <article class="product-card">
+          <span class="badge">Más vendido</span>
+          <h3>Purificador OXIGENO — Frasco 500 ml</h3>
+          <p>Formulación premium para uso doméstico.</p>
+          <p style="font-weight:700;margin:.5rem 0">CLP $XX.XXX</p>
+          <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20quiero%20comprar%20el%20500ml" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+        </article>
 
-      <article class="product-card">
-        <h3>Purificador OXIGENO — Pack 3</h3>
-        <p>Ahorro familiar. Mismo rendimiento, mejor precio.</p>
-        <p style="font-weight:700;margin:.5rem 0">CLP $XX.XXX</p>
-        <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20me%20interesa%20el%20Pack%203" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      </article>
+        <article class="product-card">
+          <h3>Purificador OXIGENO — Pack 3</h3>
+          <p>Ahorro familiar. Mismo rendimiento, mejor precio.</p>
+          <p style="font-weight:700;margin:.5rem 0">CLP $XX.XXX</p>
+          <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20me%20interesa%20el%20Pack%203" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </article>
 
-      <article class="product-card">
-        <h3>Recargas / Servicio</h3>
-        <p>Soporte y mantención programada.</p>
-        <p style="font-weight:700;margin:.5rem 0">Desde CLP $X.XXX</p>
-        <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20quiero%20agendar%20servicio" target="_blank" rel="noopener">Agendar</a>
-      </article>
-    </div>
-  </section>
-</main>
-
-  <main class="grid">
-    <section class="card">
-      <h2>Sobre mí</h2>
-      <p>Bienvenido. Servicios y contacto.</p>
+        <article class="product-card">
+          <h3>Recargas / Servicio</h3>
+          <p>Soporte y mantención programada.</p>
+          <p style="font-weight:700;margin:.5rem 0">Desde CLP $X.XXX</p>
+          <a class="btn" href="https://wa.me/56981471842?text=Hola%20OXIGENO%2C%20quiero%20agendar%20servicio" target="_blank" rel="noopener">Agendar</a>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer style="text-align:center;color:#666;padding:2rem 1rem;">
+  <footer>
     <small>© <span id="y"></span> OXIGENO</small>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-<a href="https://wa.me/56981471842"
-   target="_blank" rel="noopener" aria-label="WhatsApp"
-   style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.1rem;border-radius:999px;background:#22c55e;color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)">💬 WhatsApp</a>
-<a href="https://wa.me/56981471842"
-   target="_blank" rel="noopener" aria-label="WhatsApp"
-   style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.1rem;border-radius:999px;background:#22c55e;color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)">💬 WhatsApp</a>
 
+  <!-- Botón flotante de WhatsApp (a la derecha, no tapa el frasco) -->
+  <a href="https://wa.me/56981471842" target="_blank" rel="noopener" aria-label="WhatsApp"
+     style="position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.1rem;border-radius:999px;background:#22c55e;color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)">💬 WhatsApp</a>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
