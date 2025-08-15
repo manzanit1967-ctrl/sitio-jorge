@@ -42,7 +42,7 @@
 }
 
 /* ===== NAVBAR FIJA ===== */
-.topnav{
+.topnav{ display:none !important; }
   position:fixed; inset:0 0 auto 0; height:64px; z-index:1000;
   backdrop-filter:saturate(130%) blur(8px);
   background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
@@ -151,10 +151,9 @@ section{ scroll-margin-top: 80px }         /* corrige anclaje bajo la portada */
 
 </head>
 <body>
-  <header id="hero"></header>
+ <header id="hero"></header>
 <h1 style="text-align:center;margin:1rem 0 .25rem;letter-spacing:.5px;">OXIGENO</h1>
-  <nav class="topnav">
-  <div class="nav-inner">
+    <div class="nav-inner">
     <a class="brand" href="#top">OXIGENO</a>
     <div class="links">
       <a href="#productos">Productos</a>
