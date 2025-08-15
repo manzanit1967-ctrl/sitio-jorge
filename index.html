@@ -50,8 +50,73 @@ header h1{
     .btn-call{ display:inline-block; margin-top:1rem; padding:1rem 1.25rem; border-radius:999px; text-decoration:none; font-weight:700; border:0; box-shadow:0 8px 24px rgba(0,0,0,.12); background:#16a34a; color:#fff; font-size:1.1rem }
     .btn-call:active{ transform:translateY(1px) }
   </style>
+  /* ===== NAVBAR FIJA ===== */
+.topnav{
+  position:fixed; inset:0 0 auto 0; height:64px; z-index:1000;
+  backdrop-filter: saturate(130%) blur(8px);
+  background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav-inner{
+  max-width: 1100px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 16px;
+}
+.brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:#065f46; }
+.topnav .links a{
+  margin-left:16px; text-decoration:none; color:#111; font-weight:600;
+}
+.topnav .links a:hover{ text-decoration:underline }
+
+/* Para que el header no quede bajo la navbar */
+header{ scroll-margin-top: 80px; }
+section{ scroll-margin-top: 80px; }
+
+/* Contenedor ancho para secciones nuevas */
+.container{ max-width: 1100px; margin:0 auto; padding: 1.25rem; }
+
+/* Cards de producto */
+.products{ display:grid; gap:1.2rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.product-card{
+  border:1px solid #eaeaea; border-radius:16px; padding:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06); background:#fff;
+}
+.product-card h3{ margin:.25rem 0 .5rem }
+.badge{ display:inline-block; font-size:.8rem; background:#ecfdf5; color:#065f46; padding:.2rem .5rem; border-radius:999px; margin-bottom:.5rem }
+
+/* Botón principal */
+.btn{
+  display:inline-block; padding:.8rem 1rem; border-radius:12px; text-decoration:none; font-weight:800;
+  background:#16a34a; color:#fff; box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+.btn:hover{ filter:brightness(1.05) }
+
+/* Lista de beneficios */
+.benefits{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+.benefit{ border:1px dashed #cce3d6; border-radius:14px; padding:14px; background:#f0fdf4 }
+
+/* Bloque confianza */
+.trust{
+  display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+}
+.trust .item{ border:1px solid #eaeaea; border-radius:16px; padding:16px; background:#fff }
+
+/* Footer contacto simple */
+footer{ text-align:center;color:#666;padding:2rem 1rem }
+
 </head>
 <body>
+  <nav class="topnav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">OXIGENO</a>
+    <div class="links">
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#confianza">Confianza</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
   <header>
   <h1>OXIGENO</h1>
 </header>
