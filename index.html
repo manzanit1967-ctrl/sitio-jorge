@@ -52,14 +52,23 @@ header h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: .5px; 
   </style>
 </head>
 <body>
-  <header>
-    <h1>OXIGENO</h1>
-    <p class="muted">Teléfono: <a href="tel:+56981471842">+56 9 8147 1842</a></p>
-    <p>
-      <a class="btn-call" href="tel:+56981471842">📞 Llamar ahora</a>
-      <a class="btn-call" href="https://wa.me/56981471842" target="_blank" rel="noopener" style="background:#22c55e;">💬 WhatsApp</a>
-    </p>
-  </header>
+ <header>
+  <h1>OXIGENO</h1>
+
+  <!-- Foto de portada (prueba PNG; si falla, cambia a JPG automáticamente) -->
+  <img id="foto-jm" src="images/foto.png?v=7" alt="OXIGENO"
+       style="display:block;margin:16px auto;border-radius:16px;width:260px;height:auto;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+  <script>
+    const im = document.getElementById('foto-jm');
+    im.onerror = () => { im.onerror = null; im.src = 'images/foto.jpg?v=7'; };
+  </script>
+
+  <p class="muted">Teléfono: <a href="tel:+56981471842">+56 9 8147 1842</a></p>
+  <p>
+    <a class="btn-call" href="tel:+56981471842">📞 Llamar ahora</a>
+    <a class="btn-call" href="https://wa.me/56981471842" target="_blank" rel="noopener" style="background:#22c55e;">💬 WhatsApp</a>
+  </p>
+</header>
 
   <main class="grid">
     <section class="card">
