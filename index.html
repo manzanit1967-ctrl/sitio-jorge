@@ -31,35 +31,63 @@
 }
 
   <style>
-    :root { --maxw: 900px; }
-    *{ box-sizing:border-box }
-    body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; line-height:1.5; color:#111 }
-
-    /* HERO: foto de portada desde la RAÍZ */
-    header{
-  min-height: 90vh;                 /* más alto = frasco completo */
-  padding: 0 1rem;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; color: #fff;
-  background-color: #0b0f14;        /* color de fondo detrás del frasco */
+/* ==== HERO SIN RECORTES (frasco completo) ==== */
+#hero{
+  min-height: 100vh; /* ocupa toda la pantalla */
   background:
     linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
-    url('foto-antidoto.png?v=31') center/contain no-repeat;  /* RAÍZ + contain */
+    url('foto-antidoto.png?v=36') center/contain no-repeat;  /* archivo en la RAÍZ */
+  background-color: #0b0f14;       /* color detrás si sobran márgenes */
   border-bottom: 0;
 }
-header h1{
-  margin: 0; font-size: clamp(2.2rem, 5vw, 3.2rem);
-  letter-spacing: .5px; text-transform: uppercase;
-  text-shadow: 0 2px 10px rgba(0,0,0,.35);
-}
 
-    .muted{ color:rgba(255,255,255,.92) } .muted a{ color:#fff }
-    main{ max-width:var(--maxw); margin:0 auto; padding:1.25rem }
-    .card{ border:1px solid #eaeaea; border-radius:16px; padding:1.25rem; box-shadow:0 8px 24px rgba(0,0,0,.06) }
-    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
-    .btn-call{ display:inline-block; margin-top:1rem; padding:1rem 1.25rem; border-radius:999px; text-decoration:none; font-weight:700; border:0; box-shadow:0 8px 24px rgba(0,0,0,.12); background:#16a34a; color:#fff; font-size:1.1rem }
-    .btn-call:active{ transform:translateY(1px) }
-  </style>
+/* ===== NAVBAR FIJA ===== */
+.topnav{
+  position:fixed; inset:0 0 auto 0; height:64px; z-index:1000;
+  backdrop-filter:saturate(130%) blur(8px);
+  background:linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav-inner{
+  max-width:1100px; margin:0 auto; height:100%;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 16px;
+}
+.brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:#065f46; }
+.topnav .links a{ margin-left:16px; text-decoration:none; color:#111; font-weight:600; }
+.topnav .links a:hover{ text-decoration:underline }
+
+/* Desplazamiento y anclajes */
+html{ scroll-behavior:smooth }
+header, section{ scroll-margin-top:80px }
+
+/* Contenedor ancho y grillas */
+.container{ max-width:1100px; margin:0 auto; padding:1.25rem }
+.products{ display:grid; gap:1.2rem; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)) }
+.product-card{
+  border:1px solid #eaeaea; border-radius:16px; padding:16px;
+  background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.06)
+}
+.product-card h3{ margin:.25rem 0 .5rem }
+.badge{ display:inline-block; font-size:.8rem; background:#ecfdf5; color:#065f46; padding:.2rem .5rem; border-radius:999px; margin-bottom:.5rem }
+
+/* Botón principal */
+.btn{
+  display:inline-block; padding:.8rem 1rem; border-radius:12px; text-decoration:none; font-weight:800;
+  background:#16a34a; color:#fff; box-shadow:0 10px 24px rgba(0,0,0,.12)
+}
+.btn:hover{ filter:brightness(1.05) }
+
+/* Listas varias */
+.benefits{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)) }
+.benefit{ border:1px dashed #cce3d6; border-radius:14px; padding:14px; background:#f0fdf4 }
+
+.trust{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)) }
+.trust .item{ border:1px solid #eaeaea; border-radius:16px; padding:16px; background:#fff }
+
+/* Footer */
+footer{ text-align:center; color:#666; padding:2rem 1rem }
+</style>
+
   /* ===== NAVBAR FIJA ===== */
 .topnav{
   position:fixed; inset:0 0 auto 0; height:64px; z-index:1000;
